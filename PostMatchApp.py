@@ -306,7 +306,7 @@ with graph_tab:
         #     chart = (c + lg_avg_line + lg_avg_label + team_avg_line + team_avg_label)
             
         # chart.layer[0].encoding.y.title = var
-        # st.altair_chart(chart, use_container_width=False)
+        # st.altair_chart(chart, width='content')
 
     if plot_type == '📊 Bar':
         lg_avg_var = league_data[var].mean()
@@ -404,7 +404,7 @@ with graph_tab:
         #         chart = (c + lg_avg_line + team_avg_line + team_avg_label)
 
         # chart.layer[0].encoding.y.title = var
-        # st.altair_chart(chart, use_container_width=False)
+        # st.altair_chart(chart, width='content')
 
 
 with rank_tab:
@@ -571,7 +571,7 @@ with xg_tab:
     
     chart_xg = (lg_chart_xg + team_chart_xg + line_plot_xg)
 
-    st.altair_chart(chart_xg, use_container_width=True)
+    st.altair_chart(chart_xg, width='stretch')
 
 with scatter_tab:
     xvar = st.selectbox('X-Axis Variable', available_vars)
@@ -621,7 +621,7 @@ with scatter_tab:
     
     scatter_chart = (lg_chart_scatter + team_chart_scatter)
     
-    st.altair_chart(scatter_chart, use_container_width=True)
+    st.altair_chart(scatter_chart, width='stretch')
 
 
 with st.expander("Game Control, On-Ball Pressure, & Off-Ball Pressure Explainer"):
