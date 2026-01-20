@@ -17,13 +17,13 @@ cxG = 1.53570624482222
 @st.cache_data(ttl=60*15)
 
 
-st.title("Attention TikTok user @JustMessi23... I see you're stealing my work, removing my signature, and adding your own, passing it off as your own. If you continue, all my apps will cease to exist.")
-
 def color_percentile(pc):
     rgb = cmap(norm(pc))
     return 'color: #%02x%02x%02x; opacity: 1; textcolor: white' % (int(rgb[0]*100), int(rgb[1]*100), int(rgb[2]*100))
 norm = matplotlib.colors.Normalize(vmin=1, vmax=16)
 cmap = matplotlib.colormaps['coolwarm']
+
+st.title("Attention TikTok user @JustMessi23... I see you're stealing my work, removing my signature, and adding your own, passing it off as your own. If you continue, all my apps will cease to exist.")
 
 def table_start_end(df,start_date,end_date):
     df.Date = pd.to_datetime(df.Date)
