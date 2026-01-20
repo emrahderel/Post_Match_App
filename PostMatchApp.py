@@ -17,6 +17,8 @@ cxG = 1.53570624482222
 @st.cache_data(ttl=60*15)
 
 
+st.title("Attention TikTok user @JustMessi23... I see you're stealing my work, removing my signature, and adding your own, passing it off as your own. If you continue, all my apps will cease to exist.")
+
 def color_percentile(pc):
     rgb = cmap(norm(pc))
     return 'color: #%02x%02x%02x; opacity: 1; textcolor: white' % (int(rgb[0]*100), int(rgb[1]*100), int(rgb[2]*100))
@@ -64,7 +66,7 @@ st.subheader('All data via Opta')
 with st.expander('Disclaimer & Info'):
     st.write('''
     - All of the data on this app comes from Opta. I manipulate the raw data to create these, but it's all Opta data.  \n
-    - You are allowed to, and I encourage you, to share any images from this app on your socials, websites, videos, etc... I just ask that you not alter the images to remove the credits, and to please give this site credit. Thank you!  \n
+    - You are allowed to, and I encourage you, to share any images from this app on your socials, websites, videos, etc... I just ask that you not alter the images to remove the credits, and to please give this site/me credit. Thank you!  \n
     - The xG model used to generate xG in this app is my own model. It will give different xG numbers for a single game than FotMob, or Wyscout, or Understat, etc. That doesn't mean either source is wrong, as they will all differ from each other. Please compare xG numbers from this app with other xG numbers from this app, understanding that other xG models give different values. Over a full season, my model is similar to others on a player & team level.
     - The Expected Points (xPts) model is a Pythagorean expectation model, using the xG output from my xG model. For more info on the method, please read my detailed explainer: https://cafetactiques.com/2023/04/15/creating-an-expected-points-model-inspired-by-pythagorean-expectation/
     ''')
