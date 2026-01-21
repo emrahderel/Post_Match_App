@@ -23,7 +23,7 @@ def color_percentile(pc):
 norm = matplotlib.colors.Normalize(vmin=1, vmax=16)
 cmap = matplotlib.colormaps['coolwarm']
 
-st.title("Attention TikTok user @JustMessi23... I see you're stealing my work, removing my signature, and adding your own, passing it off as your own. If you continue, all my apps will cease to exist.")
+
 
 def table_start_end(df,start_date,end_date):
     df.Date = pd.to_datetime(df.Date)
