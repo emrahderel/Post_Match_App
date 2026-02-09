@@ -23,8 +23,6 @@ def color_percentile(pc):
 norm = matplotlib.colors.Normalize(vmin=1, vmax=16)
 cmap = matplotlib.colormaps['coolwarm']
 
-
-
 def table_start_end(df,start_date,end_date):
     df.Date = pd.to_datetime(df.Date)
     df = df[df.Date.between(pd.to_datetime(start_date),pd.to_datetime(end_date))]
@@ -71,7 +69,7 @@ with st.expander('Disclaimer & Info'):
     - The Expected Points (xPts) model is a Pythagorean expectation model, using the xG output from my xG model. For more info on the method, please read my detailed explainer: https://cafetactiques.com/2023/04/15/creating-an-expected-points-model-inspired-by-pythagorean-expectation/
     ''')
 
-df = pd.read_csv(f"https://raw.githubusercontent.com/griffisben/Post_Match_App/main/League_Files/{league.replace(' ','%20')}%20Full%20Match%20List%20{season}.csv")
+df = pd.read_csv(f"https://raw.githubusercontent.com/griffisben/Post_Match_App/main/League_Files/{league.replace(' ','%20')}%20Full%20Match%20List%20{season.replace(' ','%20')}.csv")
 df['Match_Name'] = df['Match'] + ' ' + df['Date']
 
 
@@ -128,14 +126,14 @@ for i in range(len(render_matches)):
             nbi_game_link = nbi_links[nbi_links.MatchName==render_matches[i]]['URL'].values[0]
             with report_tab:
                 st.write(f'Link to Full Match Video (some games may not have been shown on M4Sport and therefore are not available):  \n  \n{render_matches[i][:-11]} -> {nbi_game_link}')
-        url = f"https://raw.githubusercontent.com/griffisben/Post_Match_App/main/Image_Files/{league.replace(' ','%20')}%20{season}/{match_string}.png"
+        url = f"https://raw.githubusercontent.com/griffisben/Post_Match_App/main/Image_Files/{league.replace(' ','%20')}%20{season.replace(' ','%20')}/{match_string}.png"
         response = requests.get(url)
         game_image = Image.open(io.BytesIO(response.content))
         report_tab.image(game_image)
     except:
         st.write(f"Apologies, {render_matches[i]} must not be available yet. Please check in later!")
 
-team_data = pd.read_csv(f"https://raw.githubusercontent.com/griffisben/Post_Match_App/main/Stat_Files/{league.replace(' ','%20')}%20{season}.csv")
+team_data = pd.read_csv(f"https://raw.githubusercontent.com/griffisben/Post_Match_App/main/Stat_Files/{league.replace(' ','%20')}%20{season.replace(' ','%20')}.csv")
 
 conditions_team = [
     team_data['Goals'] > team_data['Goals Conceded'],
